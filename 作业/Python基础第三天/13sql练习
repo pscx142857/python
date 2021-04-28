@@ -1,0 +1,11 @@
+sql练习：在上一次课件创建的两张表中查询
+    查询来自“北京”且来自“海定区”的学生的姓名。
+    select name from student where address like '%北京%' and address like '%海淀区%'
+    查询选择“英语”的学生姓名和院系。
+    select a.student a.department from student a,score b where b.c_name = '英语' and b.stu_id = a.id
+    查询“英语”学科的平均分是多少。
+    select avg(grade) from score where c_name = '英语'
+    查询除了“中文系”的学生还有哪些院系的学生选择了“中文”。
+    select a.department from student a,score b where c_name = '中文' and b.stu_id = a.id and a.department != '中文系'
+    查询谁的“英语”成绩小于80分
+    select a.name from student a,score b where b.stu_id = a.id and b.grade < 80 and b.c_name = '英语'
