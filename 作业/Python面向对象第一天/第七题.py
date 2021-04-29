@@ -5,9 +5,9 @@ class Donkey:
     def __init__(self,weight):
         self.weight = weight
     # 定义一个speak方法,这个方法里面通过self.属性名,来调用属性
-    def go(self):
-        print(f"我的体重是{self.weight}")
+    def run(self):
+        print(f"我的名字是{self.weight},我会跑哦")
 # 实例化一个对象
-donkey = Donkey(1238)
+donkey = Donkey("小白")
 # 调用花类的方法
-donkey.go()
+donkey.run()
