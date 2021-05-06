@@ -22,3 +22,5 @@ s = Singleton("第一")
 print(id(s))
 s2 = Singleton("第二")
 print(id(s2))
+
+x = 1
