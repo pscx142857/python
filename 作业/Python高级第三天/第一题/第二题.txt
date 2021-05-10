@@ -1,0 +1,57 @@
+2.将基础mysql指令敲一遍.
+    a.连接数据库
+    mysql -P3309 -uroot -proot
+    b.创建表的语法
+    create table `表名`(字段名1 字段类型,字段名2 字段类型,...)
+    c.数据类型
+        1.数字型
+            tinyint 0~255,有符号:-128~127
+            int 0~42亿,有符号:-21亿~21亿
+        2.字符串类型.长度小于255建议使用
+            char() 定长字符串,计算速度快
+            varchar() 变长字符串,节省空间
+            文本类型:
+            text 1600万
+            longtext 42亿
+        3.日期时间类型
+            datetime 0001-9999
+            timestamp   1970-2038
+    d.常用属性(null, not null, default,comment,primary key,auto_increment)
+        null    设置是否可以为空,默认就是null
+        not null    不能为空
+        default     设置默认值
+        comment     备注
+        primary key 主键:
+                        1.用于唯一标识一条记录
+                        2.一个表中只能有一个主键
+                        3.主键的值不能为空
+                        4.主键的值不能重复
+        auto_increment 自动增长
+
+    e.操作表的语句
+        删除表,创建表,修改表,查看表
+        删除表:    drop table `表名`;
+        创建表:    create table `表名`(字段名1 字段类型,字段名2 字段类型,...)
+        修改表:
+            修改表选项:alter table `表名` [新选项]
+            修改表名:rename table `旧表名` to `新表名`;
+            修改字段:alter table `表名` add 字段名 字段类型
+            修改字段名和类型:alter table `表名` change `旧字段名` `新字段名` 新字段类型;
+        查看表:
+            查询所有表:show tables
+            根据条件查询:show tables like `%_`
+            查询建表语句:show create table `表名`
+            查询表结构:desc `表名`
+    f.记录操作
+        insert,delete,update,select
+
+        添加:insert into `表名`(字段列表) values(值列表)
+            insert into `表名` values(值必须全写)
+        删除:delete from `表名` where 条件语句
+        修改:update `表名` set 字段1=值1,字段2=值2,..where 条件语句
+        查询:select 字段 from `表名` where 条件语句
+    g.连表查询 join..on...
+        内连接:select 字段列表 from `表1` join `表2` on 连接条件
+        外连接:
+            左外连接:select 字段列表 from `表1` left join `表2` on 连接条件
+            右外连接:select 字段列表 from `表1` right join `表2` on 连接条件

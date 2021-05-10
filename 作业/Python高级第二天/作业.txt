@@ -1,0 +1,35 @@
+1.实现上课代码1遍
+2.复习如何查看import路径查找信息，如何添加自定义目录作为路径查找信息；
+    仿照课堂案例，实现可以import自定义模块（win： 在D盘mod目录下）
+3.使用pip实现安装pymysql模块，然后查看所有模块，再卸载pymysql模块
+4.下面的程序执行结果是：
+    x = 1
+    def change(a):
+        global x
+            x += 1
+            print(x)
+    change(x)
+5.写出下面代码的执行结果：
+    a = 'global'
+
+    def outer():
+        def len(in_var):
+            print('called my len() function: ', end="")
+            l = 0
+            for i in in_var:
+                l += 1
+            return l
+        a = 'local'
+        def inner():
+            global len
+            nonlocal a
+            a += ' variable'  #'localvariable
+        inner()
+        print('a is', a)
+        print(len(a))
+
+    outer()
+    print(len(a))
+
+    print('a is', a)
+6.定义一个函数,实现对字典的浅拷贝  分别使用copy（）和不使用
